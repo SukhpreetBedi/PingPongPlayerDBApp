@@ -1,0 +1,21 @@
+.container-table {
+  padding: 20px;
+}
+
+td, th {
+  padding: 20px;
+}
+
+input[type=text], select, input[type=email], input[type=number] {
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.validation-error {
+  color: red;
+  margin-bottom: 10px;
+}
+

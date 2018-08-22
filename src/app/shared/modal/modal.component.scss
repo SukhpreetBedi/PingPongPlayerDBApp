@@ -1,0 +1,27 @@
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3000;
+}
+
+.modal-content {
+  padding: 10px 16px;
+}
+
+.modal-header {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.modal-footer {
+  justify-content: flex-start;
+}
+
+.wide-modal {
+  @media (min-width: 576px) {
+    max-width: 698px;
+  }
+}
+
+.modal-dialog {
+  width: 600px;
+  margin: 100px auto;
+}

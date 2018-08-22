@@ -1,0 +1,76 @@
+<div class="container">
+  <form #editForm="ngForm">
+    <fieldset>
+      <div class="form-group">
+        <div class="col-md-12">
+          <label for="fname">First name</label>
+          <input type="text" class="form-control" name="fname" id="fname" #FirstName="ngModel" placeholder="First name"
+                 [(ngModel)]="player.FirstName" required>
+          <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">
+            First Name is Required
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="lname">Last name</label>
+          <input type="text" class="form-control" name="lname" id="lname" #LastName="ngModel" placeholder="Last name"
+                 [(ngModel)]="player.LastName" required>
+          <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">
+            Last Name is Required
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age" #Age="ngModel" placeholder="Age"
+                 [(ngModel)]="player.Age" required max="100" min="1">
+          <div class="validation-error" *ngIf="Age.invalid && Age.touched">
+            Please enter a valid number
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12">
+            <label for="skillLevel">Skill Level</label>
+            <select id="skillLevel" class="form-control" name="skillLevel" #SkillLevel="ngModel"
+                    [(ngModel)]="player.SkillLevel" required>
+              <option selected>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+            <div class="validation-error" *ngIf="SkillLevel.invalid && SkillLevel.touched">
+              Please Select a SkillLevel
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12">
+            <label for="email">Email Address</label>
+            <input type="text" class="form-control" id="Email" name="email" #Email="ngModel" placeholder="email"
+                   required [(ngModel)]="player.Email">
+            <div class="validation-error" *ngIf="Email.invalid && Email.touched">
+              Please Enter Email (Required)
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12">
+            <ng-container *ngIf="isEdit">
+              <button class="btn btn-success" type="submit" [disabled]="!editForm.valid" (click)="OnUpdateClicked()">
+                Update
+              </button>
+              <button class="btn btn-success" type="submit" (click)="OnDeleteClicked()">Delete</button>
+              <button class="btn btn-success" type="submit" [routerLink]="['']">Go Back</button>
+              {{message}}
+            </ng-container>
+            <ng-container *ngIf="!isEdit">
+              <button class="btn btn-success" type="submit" [disabled]="!editForm.valid" (click)="OnAddClicked()">
+                Add
+              </button>
+              <button class="btn btn-success" type="submit" [routerLink]="['']">Go Back</button>
+              {{message}}
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</div>
