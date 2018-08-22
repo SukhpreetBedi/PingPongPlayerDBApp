@@ -13,7 +13,6 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ToastModule} from 'ng2-toastr';
 
 
 @NgModule({
@@ -31,8 +30,6 @@ import {ToastModule} from 'ng2-toastr';
     FormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    ToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

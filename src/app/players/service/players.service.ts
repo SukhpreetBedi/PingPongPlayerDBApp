@@ -13,23 +13,23 @@ export class PlayersService {
   postPlayer(player: Player) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
 
-    return this.http.post('http://localhost:59146/api/Players/', JSON.stringify(player), {headers: headers});
+    return this.http.post('http://localhost:58396/api/Players/', JSON.stringify(player), {headers: headers});
   }
 
   putPlayer(player: Player) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
 
-    return this.http.put('http://localhost:59146/api/Players/' + player.PlayerID, JSON.stringify(player), {headers: headers});
+    return this.http.put('http://localhost:58396/api/Players/' + player.PlayerID, JSON.stringify(player), {headers: headers});
   }
 
   getPlayers() {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.get('http://localhost:59146/api/Players/', {headers: headers});
+    return this.http.get('http://localhost:58396/api/Players/', {headers: headers});
   }
 
   getPlayer(id: number) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.get('http://localhost:59146/api/Players/' + id, {headers: headers});
+    return this.http.get('http://localhost:58396/api/Players/' + id, {headers: headers});
   }
 
   deletePlayer(id: number) {
