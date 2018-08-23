@@ -35,6 +35,6 @@ export class PlayersService {
   deletePlayer(id: number) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
 
-    return this.http.delete('http://localhost:59146/api/Players/' + id, {headers: headers});
+    return this.http.delete('http://localhost:58396/api/Players/' + id, {headers: headers});
   }
 }
